@@ -297,7 +297,7 @@
         <b>間口 約<i>40</i>m × 奥行 約<i>24</i>m</b>
         <b class="warn">登記地目 <i>田</i>（農地転用が前提）</b>
         <b>相場水準 <i>3,810</i>万円</b>
-        <b>賃料目線 月 <i>28.4</i>万円</b>
+        <b>貸出賃料 目線 月 <i>28.4</i>万円</b>
         <b>洪水 浸水想定 <i>区域外</i></b>
       </div>
       <div class="meta">根拠：登記全部事項（2026/10/06）・公図（旧土地台帳附属地図）・東京カンテイ土地相場レポート（2026/10/15）・北方町ハザードマップ（2019年4月版）・北方町人口統計（2026/10/1）・Web調査</div>
@@ -326,7 +326,7 @@
       <span class="cf cf-unk">要確認</span> 役所・現地での確認が必要なもの
     </div>
     <div class="premise" style="border-left-color:var(--navy);background:#f3f6fb;border-color:#c9d6e6;">
-      <b>結論を先に：</b>町北部・芝原地区の<b>区画整理済み・整形のまとまった940㎡</b>。洪水の浸水想定区域外で液状化リスクも極めて低く、<b>土地の"素性"は町内でも良い部類</b>。一方で<b>登記地目は「田」</b>のため転用手続と造成が前提になり、<b>鉄道駅からは遠い（車・バス前提）</b>。相場水準は<b>坪13.4万円・総額約3,810万円</b>（幅 3,100〜4,490万円）。賃貸は<b>月額 坪1,000円の目線で約28.4万円/月</b>（近隣の募集事例は坪850〜1,200円。成約事例はなし）。
+      <b>結論を先に：</b>町北部・芝原地区の<b>区画整理済み・整形のまとまった940㎡</b>。洪水の浸水想定区域外で液状化リスクも極めて低く、<b>土地の"素性"は町内でも良い部類</b>。一方で<b>登記地目は「田」</b>のため転用手続と造成が前提になり、<b>鉄道駅からは遠い（車・バス前提）</b>。相場水準は<b>坪13.4万円・総額約3,810万円</b>（幅 3,100〜4,490万円）。賃貸は<b>貸出賃料 坪1,000円/月の目線で約28.4万円/月</b>（近隣の貸出中の事例は坪850〜1,200円。成約賃料は不明）。
     </div>
   </div>
 
@@ -402,7 +402,7 @@
   <!-- ============ 03 ============ -->
   <section id="s3" class="pb">
     <div class="sec-head"><span class="no">03</span><h2>査定・価格 ― 相場水準から見た売買・賃貸の目安</h2><p>出典：東京カンテイ 土地相場Plus（2026/10/15）</p></div>
-    <p class="lead">共有された査定資料（東京カンテイ）の<b>周辺実勢の相場水準は 坪134,000円（㎡41,000円）</b>。これに地積284.3坪を掛けた<b>約3,810万円</b>を基準値として掲載します。賃貸は<b>月額 坪1,000円の目線（約28.4万円/月）</b>を基準ケースとし、REINSの募集事例と利回りからの試算を並べています。</p>
+    <p class="lead">共有された査定資料（東京カンテイ）の<b>周辺実勢の相場水準は 坪134,000円（㎡41,000円）</b>。これに地積284.3坪を掛けた<b>約3,810万円</b>を基準値として掲載します。賃貸は<b>貸出賃料 坪1,000円/月の目線（約28.4万円/月）</b>を基準ケースとし、REINSの貸出中の事例と利回りからの試算を並べています。</p>
     <div class="price-hero">
       <div class="pbox">
         <h4>売買｜相場水準ベースの概算額 <span class="cf cf-est">推定</span></h4>
@@ -431,10 +431,10 @@
         </div>
         <label>造成・転用費（控除） <output id="o_cost">0万円</output></label>
         <input type="range" id="r_cost" min="0" max="1500" step="10" value="0">
-        <label>賃貸｜月額賃料の坪単価（基準ケース） <output id="o_rent">1,000円</output></label>
+        <label>賃貸｜貸出賃料の坪単価／月（基準ケース） <output id="o_rent">1,000円</output></label>
         <input type="range" id="r_rent" min="500" max="1500" step="10" value="1000">
         <div class="presets">
-          <button data-r="850">栄町 募集 850</button><button data-r="1000">目線 1,000</button><button data-r="1200">高屋伊勢田 募集 1,200</button>
+          <button data-r="850">栄町 貸出 850</button><button data-r="1000">目線 1,000</button><button data-r="1200">高屋伊勢田 貸出 1,200</button>
         </div>
         <label>賃貸｜期待利回り（比較用：土地価格に対する年賃料） <output id="o_yld">3.0%</output></label>
         <input type="range" id="r_yld" min="1" max="10" step="0.1" value="3.0">
@@ -447,22 +447,22 @@
           <tr class="hl"><td><b>坪単価ベース</b>（基準）</td><td class="r" id="v_bm">28.4万円</td><td class="r" id="v_by">341万円</td><td class="r" id="v_bp">9.0%</td></tr>
           <tr><td>利回りベース（比較）</td><td class="r" id="v_rm">9.5万円</td><td class="r" id="v_ry">114万円</td><td class="r" id="v_rp">3.0%</td></tr>
         </table>
-        <div class="note"><b>基準ケースの坪1,000円/月はオーナーの経験則</b>（愛知県北部の扶桑町・江南市でも同等の肌感）で、成約事例に基づく査定ではありません<span class="cf cf-est">推定</span>。利回りは「年額÷売買概算額」。利回りベースは、事業用定期借地で土地価格の2〜5%程度とされる水準との比較用です。両者の差が大きいほど、賃料の目線か売買価格のどちらかを精査する余地があります。</div>
+        <div class="note"><b>賃料はすべて貸出賃料（募集賃料）です。</b>成約賃料（実勢）は不明です。<b>基準ケースの坪1,000円/月はオーナーの経験則</b>（愛知県北部の扶桑町・江南市でも同等の肌感）で、成約事例に基づく査定ではありません<span class="cf cf-est">推定</span>。利回りは「年額÷売買概算額」。利回りベースは、事業用定期借地で土地価格の2〜5%程度とされる水準との比較用です。両者の差が大きいほど、賃料の目線か売買価格のどちらかを精査する余地があります。</div>
       </div>
     </div>
 
-    <h3 class="sub">賃貸の参考 ― 目線と募集事例（成約事例なし）</h3>
+    <h3 class="sub">賃貸の参考 ― 貸出賃料（目線と貸出中の事例、成約賃料は不明）</h3>
     <div class="tbl-wrap">
       <table class="cases" style="min-width:760px">
-        <thead><tr><th style="cursor:default">区分</th><th style="cursor:default">所在</th><th style="cursor:default">面積</th><th style="cursor:default">月額賃料</th><th style="cursor:default">坪単価/月</th><th style="cursor:default">940㎡換算/月</th><th style="cursor:default">条件</th><th style="cursor:default">敷地から</th></tr></thead>
+        <thead><tr><th style="cursor:default">区分</th><th style="cursor:default">所在</th><th style="cursor:default">面積</th><th style="cursor:default">貸出賃料/月</th><th style="cursor:default">坪単価/月</th><th style="cursor:default">940㎡換算/月</th><th style="cursor:default">条件</th><th style="cursor:default">敷地から</th></tr></thead>
         <tbody>
           <tr class="near"><td><span class="tag" style="background:#f3e3b8;color:#6b5411">目線</span></td><td>基準ケース（オーナーの経験則：どのエリアでも目線。扶桑町・江南市でも同等）</td><td class="r">―</td><td class="r">―</td><td class="r">1,000円</td><td class="r">28.4万円</td><td>経験則（成約事例ではない）</td><td>―</td></tr>
-          <tr><td><span class="tag u">募集</span></td><td>北方町栄町2丁目</td><td class="r">1,175㎡</td><td class="r">30.2万円</td><td class="r">850円</td><td class="r">24.2万円</td><td>60/200・角地・南8m・敷金なし/保証金12ヶ月</td><td>南西 約0.7km</td></tr>
-          <tr><td><span class="tag u">募集</span></td><td>北方町高屋伊勢田2丁目</td><td class="r">741㎡</td><td class="r">26.9万円</td><td class="r">1,200円</td><td class="r">34.1万円</td><td>80/200・南22m・敷金6ヶ月・礼金1ヶ月</td><td>南 約3.5km</td></tr>
+          <tr><td><span class="tag u">貸出中</span></td><td>北方町栄町2丁目</td><td class="r">1,175㎡</td><td class="r">30.2万円</td><td class="r">850円</td><td class="r">24.2万円</td><td>60/200・角地・南8m・敷金なし/保証金12ヶ月</td><td>南西 約0.7km</td></tr>
+          <tr><td><span class="tag u">貸出中</span></td><td>北方町高屋伊勢田2丁目</td><td class="r">741㎡</td><td class="r">26.9万円</td><td class="r">1,200円</td><td class="r">34.1万円</td><td>80/200・南22m・敷金6ヶ月・礼金1ヶ月</td><td>南 約3.5km</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="note">出典：REINS 賃貸物件検索結果（在庫、2026/10/15）。<b>2件とも募集中の希望賃料で、成約事例はありません</b>。どちらも幹線道路沿いや角地など対象地より条件が良い可能性があり、高屋伊勢田は町南部の別エリアです。対象地への当てはめは<b>上限側の参考</b>として扱い、精査が必要です <span class="cf cf-unk">要確認</span></div>
+    <div class="note">出典：REINS 賃貸物件検索結果（在庫、2026/10/15）。<b>2件とも現在貸出中の貸出賃料（募集賃料）で、成約賃料は不明です</b>。どちらも幹線道路沿いや角地など対象地より条件が良い可能性があり、高屋伊勢田は町南部の別エリアです。対象地への当てはめは<b>上限側の参考</b>として扱い、精査が必要です <span class="cf cf-unk">要確認</span></div>
 
     <h3 class="sub">周辺の売出・取引事例（直近2年・10件）― 見出しクリックで並べ替え</h3>
     <div class="tbl-wrap">
@@ -670,7 +670,7 @@
       <li><input type="checkbox" id="c5"><div><div class="t">上下水道・ガスの引込状況</div><div class="w">前面道路の本管の有無。北方町 上下水道課（058-323-1112）。</div></div><span class="who">役所</span></li>
       <li><input type="checkbox" id="c6"><div><div class="t">地積測量図・境界確定の有無</div><div class="w">登記簿面積と実測の差。分割・売却なら確定測量が前提。</div></div><span class="who">登記</span></li>
       <li><input type="checkbox" id="c7"><div><div class="t">固定資産税評価額・倍率</div><div class="w">路線価がない倍率地域のため、評価証明書を取得して税務評価を確認。</div></div><span class="who">役所</span></li>
-      <li><input type="checkbox" id="c8"><div><div class="t">賃料の精査（成約事例の確認）</div><div class="w">REINSは募集中の在庫2件のみで成約事例なし。坪1,000円/月の目線を、芝原周辺の成約賃料やテナント候補へのヒアリングで裏付ける。</div></div><span class="who">社内</span></li>
+      <li><input type="checkbox" id="c8"><div><div class="t">貸出賃料の精査（成約賃料の確認）</div><div class="w">REINSは貸出中の在庫2件のみで成約賃料は不明。坪1,000円/月の目線を、芝原周辺の成約賃料やテナント候補へのヒアリングで裏付ける。</div></div><span class="who">社内</span></li>
     </ul>
   </section>
 
