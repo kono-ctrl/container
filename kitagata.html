@@ -238,8 +238,8 @@
   .fverdict .v h4{font-size:15px;color:var(--navy);margin:2px 0 4px;}
   .fverdict .v p{font-size:12.3px;}
   .ffilter{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 10px;}
-  .ffilter button,.lay-btns button,.ftabs button,.rentsw button{font-family:inherit;font-size:12.3px;font-weight:700;padding:6px 12px;border:1px solid var(--line);background:#fff;border-radius:16px;cursor:pointer;color:var(--navy);}
-  .ffilter button.on,.lay-btns button.on,.ftabs button.on,.rentsw button.on{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .ffilter button,.ftabs button,.rentsw button{font-family:inherit;font-size:12.3px;font-weight:700;padding:6px 12px;border:1px solid var(--line);background:#fff;border-radius:16px;cursor:pointer;color:var(--navy);}
+  .ffilter button.on,.ftabs button.on,.rentsw button.on{background:var(--navy);color:#fff;border-color:var(--navy);}
   .fits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   .fit-card{border:1px solid var(--line);border-radius:6px;background:#fff;padding:12px 14px;cursor:pointer;position:relative;transition:box-shadow .15s,border-color .15s;}
   .fit-card:hover{border-color:var(--gold);box-shadow:0 2px 10px rgba(0,0,0,.08);}
@@ -261,16 +261,6 @@
   .fit-card .more li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--gold);}
   .fit-card .hint{font-size:11px;color:var(--navy2);margin-top:6px;font-weight:700;}
   .fit-card.open .hint{display:none;}
-  .fit-card .go{margin-top:8px;font-family:inherit;font-size:12px;font-weight:700;padding:5px 12px;border:1px solid var(--gold);background:var(--gold-bg);color:var(--amber-ink);border-radius:14px;cursor:pointer;}
-  .plan{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:14px;background:#fafbfd;}
-  .plan svg{width:100%;max-width:400px;height:auto;display:block;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:4px;}
-  .lay-btns{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-  .plan .pinfo h4{font-size:15px;color:var(--navy);margin-bottom:4px;}
-  .plan .pinfo p{font-size:12.6px;}
-  .plan .pnum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0;}
-  .plan .pnum div{background:#fff;border:1px solid var(--line);border-radius:5px;padding:7px 8px;text-align:center;}
-  .plan .pnum small{display:block;font-size:10.5px;color:var(--muted);font-weight:700;}
-  .plan .pnum b{font-family:var(--num);font-size:17px;color:var(--navy);}
   .ftabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px;}
   .fpanel[hidden]{display:none;}
   .rentbars{border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:#fff;}
@@ -292,9 +282,9 @@
   .box{border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:#fff;}
   .box h4{font-size:14px;color:var(--navy);margin-bottom:6px;}
   .box ul{margin-left:18px;font-size:12.8px;} .box ul li{margin:4px 0;}
-  @media print{ .ffilter,.lay-btns,.ftabs,.rentsw,.fit-card .hint,.fit-card .go{display:none!important;} .fit-card .more{display:block;} .fit-card[hidden]{display:block;} .fpanel[hidden]{display:block!important;} .fit-card,.box,.plan{page-break-inside:avoid;} }
-  @media screen and (max-width:900px){ .fverdict,.fits{grid-template-columns:1fr 1fr;} .plan,.two{grid-template-columns:1fr;} }
-  @media screen and (max-width:560px){ .fverdict,.fits{grid-template-columns:1fr;} .rb,.rb-axis{grid-template-columns:96px 1fr 62px;} .plan .pnum{grid-template-columns:1fr 1fr 1fr;} }
+  @media print{ .ffilter,.ftabs,.rentsw,.fit-card .hint,.x{display:none!important;} .fit-card .more{display:block;} .fit-card[hidden]{display:block;} .fpanel[hidden]{display:block!important;} .fit-card,.box{page-break-inside:avoid;} }
+  @media screen and (max-width:900px){ .fverdict,.fits{grid-template-columns:1fr 1fr;} .two{grid-template-columns:1fr;} }
+  @media screen and (max-width:560px){ .fverdict,.fits{grid-template-columns:1fr;} .rb,.rb-axis{grid-template-columns:96px 1fr 62px;} }
 
   /* checklist */
   .chk{list-style:none;margin-top:10px;}
@@ -773,21 +763,6 @@
     <div class="fits" id="fits"></div>
     <div class="note">前提：940㎡（約284坪）、用途地域は第一種住居地域と推定 <span class="cf cf-unk">未確認</span>。芝原西町の取引事例には第1種住居・第2種住居・第1種中高層住居専用の3種があり <span class="cf cf-fix">確認</span>、第1種中高層だと店舗は500㎡・2階以下、事務所不可で選択肢が狭まります。◎○△✕は「広さ・用途地域・周辺需要」の当てはまり。</div>
 
-    <h3 class="sub">配置イメージ ― 940㎡にどう収まるか</h3>
-    <div class="plan">
-      <div>
-        <div class="lay-btns" id="layBtns">
-          <button class="on" data-l="A">クリニック＋門前薬局</button>
-          <button data-l="B">デイサービス</button>
-          <button data-l="C">家族葬ホール</button>
-          <button data-l="D">2区画に分けて貸す</button>
-        </div>
-        <svg id="planSvg" viewBox="0 0 400 470" role="img" aria-label="敷地の配置イメージ"></svg>
-      </div>
-      <div class="pinfo" id="planInfo"></div>
-    </div>
-    <div class="note">※公図の形（南北約40m×東西約24m、東側が帯状地＝前面道路側）をもとにした<b>規模感をつかむための概略図</b>です <span class="cf cf-est">推測</span>。駐車1台＝2.5m×5m で描画。建物の大きさ・台数は業種の一般的な目安で、実際の計画は用途地域・接道・行政協議で変わります。</div>
-
     <h3 class="sub">需要の地合い ― なぜ今か</h3>
     <div class="stats four">
       <div class="stat"><div class="lbl">町内の診療所</div><div class="val">32<small>件</small></div><div class="sub">内科13・歯科18。病院（20床以上）は0件</div></div>
@@ -1163,23 +1138,23 @@
   /* ---------- 09 business fit ---------- */
   var K='<span class="cf cf-fix">確認</span>', E='<span class="cf cf-est">推測</span>', U='<span class="cf cf-unk">未確認</span>';
   var IND=[
-    {n:'戸建てクリニック＋門前薬局',s:'内科・整形・眼科・皮膚科など',g:'med',st:5,need:'200〜300坪（建物40〜60坪＋薬局15〜20坪＋駐車15〜25台）'+E,m:['◎','◎','◎'],lay:'A',
+    {n:'戸建てクリニック＋門前薬局',s:'内科・整形・眼科・皮膚科など',g:'med',st:5,need:'200〜300坪（建物40〜60坪＋薬局15〜20坪＋駐車15〜25台）'+E,m:['◎','◎','◎'],
      pts:['芝原地区の内科は1件のみ（いのうえクリニック）'+K+'。歯科は町内18件で飽和気味のため新規は厳しい','診療所はどの用途地域でも建てられる'+K,'町北部は洪水の浸水想定区域外・液状化の可能性が極めて低く、患者・要配慮者が来る業態で説明しやすい'+K,'競合：コスモス高屋1513のクリニック区画（駐車80台以上共用）と医師の取り合いになる'+K,'打診先：調剤薬局チェーン・医療コンサル（開業支援）に「284坪 定借可」で']},
-    {n:'デイサービス・小規模多機能など介護系',s:'',g:'med',st:4,need:'約150坪〜'+K,m:['◎','◎','○'],lay:'B',
+    {n:'デイサービス・小規模多機能など介護系',s:'',g:'med',st:4,need:'約150坪〜'+K,m:['◎','◎','○'],
      pts:['高齢化と世帯の細分化で需要は底堅い'+E,'町内の入居系は9件（住宅型有料5・サ高住2・GH1・特養1）'+K+'。デイサービスの総数は'+U,'住居系の用途地域でも建てられる'+K,'打診先：町内のデイ運営法人に同条件で']},
-    {n:'家族葬ホール',s:'',g:'shop',st:3,need:'敷地約240坪の実例（建築面積約310㎡）'+K,m:['◎','△','○'],lay:'C',
+    {n:'家族葬ホール',s:'',g:'shop',st:3,need:'敷地約240坪の実例（建築面積約310㎡）'+K,m:['◎','△','○'],
      pts:['北方町内の式場は2つだけ（若宮・高屋伊勢田）で、町北部に式場はない'+K,'ただし3km圏に8〜9式場、大手4〜5社が家族葬ホールを運営中'+K+'（距離は概算'+E+'）','一種住居なら可能性あり、一種中高層なら不可の可能性'+E+'。町の葬祭場指導要綱の有無は'+U,'住宅地では反対運動が起きやすく、<b>近隣同意が最大のリスク</b>'+E,'出店するなら既存大手への土地提供（定借）が現実的'+E]},
-    {n:'コンビニ',s:'',g:'shop',st:3,need:'150〜300坪・駐車10〜20台'+E,m:['○','○','△'],lay:'',
+    {n:'コンビニ',s:'',g:'shop',st:3,need:'150〜300坪・駐車10〜20台'+E,m:['○','○','△'],
      pts:['規模は合うが、前面道路の交通量で決まる'+U,'東側の帯状地（公図上 幅約12〜13m）の道路種別・交通量は未確定。通過交通を拾えないと不利']},
-    {n:'コインランドリー',s:'他用途との併設向き',g:'shop',st:3,need:'100坪〜・駐車6台〜'+K,m:['○','○','○'],lay:'D',
+    {n:'コインランドリー',s:'他用途との併設向き',g:'shop',st:3,need:'100坪〜・駐車6台〜'+K,m:['○','○','○'],
      pts:['世帯増・単身増は追い風'+E,'単独では広さを持て余すため、クリニック等と2区画に分けて貸す案が現実的'+E]},
-    {n:'郊外型飲食',s:'ラーメン・カフェ等',g:'shop',st:2,need:'200〜400坪'+E,m:['○','○','△'],lay:'',
+    {n:'郊外型飲食',s:'ラーメン・カフェ等',g:'shop',st:2,need:'200〜400坪'+E,m:['○','○','△'],
      pts:['幹線道路沿いでないと集客が弱い'+E,'一種住居なら建てられるが、一種中高層だと店舗は500㎡・2階以下に制限']},
-    {n:'トランクルーム・コンテナ倉庫',s:'',g:'shop',st:2,need:'20〜30坪〜'+K,m:['○','△','△'],lay:'',
+    {n:'トランクルーム・コンテナ倉庫',s:'',g:'shop',st:2,need:'20〜30坪〜'+K,m:['○','△','△'],
      pts:['広さを持て余す','住居系の用途地域では倉庫業の制限あり'+E+'（要確認）']},
-    {n:'郊外型ドラッグストア',s:'',g:'shop',st:1,need:'敷地600坪以上'+K,m:['✕','○','✕'],lay:'',
+    {n:'郊外型ドラッグストア',s:'',g:'shop',st:1,need:'敷地600坪以上'+K,m:['✕','○','✕'],
      pts:['大手の出店要件（600坪以上）に対し284坪で広さ不足'+K,'ドラッグユタカ北方芝原店が約190m先にあり、町内に5チェーン出店済み'+K]},
-    {n:'医療モール（3〜5科）',s:'',g:'med',st:1,need:'500坪以上'+E,m:['✕','○','○'],lay:'',
+    {n:'医療モール（3〜5科）',s:'',g:'med',st:1,need:'500坪以上'+E,m:['✕','○','○'],
      pts:['需要はあるが、複数科＋共用駐車には広さが足りない'+E]}
   ];
   var LBL=['広さ','用途地域','周辺需要'];
@@ -1192,9 +1167,8 @@
       '<div class="need">必要敷地の目安：'+d.need+'</div>'+
       '<div class="marks">'+d.m.map(function(v,j){return '<span class="mk '+cls(v)+'">'+LBL[j]+'<b>'+v+'</b></span>';}).join('')+'</div>'+
       '<div class="hint">▼ クリックで根拠</div>'+
-      '<div class="more"><ul>'+d.pts.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+(d.lay?'<button class="go" data-l="'+d.lay+'">配置イメージを見る ↓</button>':'')+'</div>';
+      '<div class="more"><ul>'+d.pts.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+'</div>';
     c.addEventListener('click',function(e){
-      if(e.target.classList.contains('go')){ setLay(e.target.dataset.l); document.getElementById('planSvg').scrollIntoView({behavior:'smooth',block:'center'}); return; }
       var was=c.classList.contains('open');
       box.querySelectorAll('.fit-card.open').forEach(function(o){o.classList.remove('open');});
       if(!was) c.classList.add('open');
@@ -1211,61 +1185,6 @@
       });
     });
   });
-
-  /* ---------- site plan ---------- */
-  var sv=document.getElementById('planSvg'), NS='http://www.w3.org/2000/svg', SC=10, OX=40, OY=40;
-  function el(t,a,txt){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); if(txt) e.textContent=txt; sv.appendChild(e); return e; }
-  function X(m){return OX+m*SC;} function Y(m){return OY+m*SC;}
-  function bld(x,y,w,h,label,col,sub){
-    el('rect',{x:X(x),y:Y(y),width:w*SC,height:h*SC,fill:col,stroke:'#16233f','stroke-width':1.2,rx:2});
-    el('text',{x:X(x+w/2),y:Y(y+h/2)-(sub?4:-4),'text-anchor':'middle','font-size':12,'font-weight':700,fill:'#fff'},label);
-    if(sub) el('text',{x:X(x+w/2),y:Y(y+h/2)+12,'text-anchor':'middle','font-size':10.5,fill:'#fff'},sub);
-    return w*h;
-  }
-  function park(x,y,w,h,dir){ /* dir v: stalls stacked vertically (2.5m each, 5m deep across w) */
-    el('rect',{x:X(x),y:Y(y),width:w*SC,height:h*SC,fill:'#eef0f5',stroke:'#9aa3b8','stroke-width':.8});
-    var n=0;
-    if(dir==='v'){ n=Math.floor(h/2.5); for(var i=1;i<n;i++) el('line',{x1:X(x),y1:Y(y+i*2.5),x2:X(x+w),y2:Y(y+i*2.5),stroke:'#9aa3b8','stroke-width':.8}); }
-    else { n=Math.floor(w/2.5); for(var j=1;j<n;j++) el('line',{x1:X(x+j*2.5),y1:Y(y),x2:X(x+j*2.5),y2:Y(y+h),stroke:'#9aa3b8','stroke-width':.8}); }
-    el('text',{x:X(x+w/2),y:Y(y+h/2)+4,'text-anchor':'middle','font-size':10,fill:'#4a5266','font-weight':700},n+'台');
-    return n;
-  }
-  function zone(x,y,w,h,label,col){
-    el('rect',{x:X(x),y:Y(y),width:w*SC,height:h*SC,fill:col,stroke:'none'});
-    el('text',{x:X(x+w/2),y:Y(y+h/2)+4,'text-anchor':'middle','font-size':10,fill:'#4a5266'},label);
-  }
-  var NAVY='#243a63', GOLD='#c19534', GRN='#2e7d4f', RED='#8a4b3a';
-  var LAY={
-    A:{t:'戸建てクリニック＋門前薬局',st:5,txt:'単科クリニック（約47坪）と門前薬局（約17坪）を北側に寄せ、道路側と南西に駐車場。<b>レポートの目安「建物40〜60坪＋薬局15〜20坪＋駐車15〜25台」が無理なく収まります</b>'+E+'。',
-       draw:function(){ var b=0,p=0; b+=bld(1,1,13,12,'クリニック',NAVY,'約156㎡'); b+=bld(1,15,8,7,'門前薬局',GOLD,'約56㎡'); p+=park(18.5,1,5,38,'v'); p+=park(1,25,5,14,'v'); zone(10,15,3.5,24,'通路','#f7f8fb'); return [b,p]; }},
-    B:{t:'デイサービス（平屋）',st:4,txt:'平屋の施設（約87坪）と送迎車の車寄せ、職員・来客用の駐車場。<b>レポートの目安「約150坪〜」に対して余裕があり</b>'+K+'、庭や菜園スペースも取れます'+E+'。',
-       draw:function(){ var b=0,p=0; b+=bld(1,1,16,18,'デイサービス',GRN,'約288㎡（平屋）'); zone(1,20,16,6,'送迎車の車寄せ（屋根付き）','#e8f5ee'); p+=park(18.5,1,5,38,'v'); p+=park(1,28,5,11,'v'); zone(8,28,9,11,'庭・菜園','#f2f7ea'); return [b,p]; }},
-    C:{t:'家族葬ホール',st:3,txt:'実例（敷地約796㎡・建築面積約310㎡）'+K+'と同程度の建物に、駐車20台超。<b>規模は合いますが、住宅地での近隣同意と3km圏の競合が最大のハードル</b>'+E+'。',
-       draw:function(){ var b=0,p=0; b+=bld(1,1,14,22,'家族葬ホール',RED,'約308㎡'); zone(15,6,3,10,'寄付','#f6ece9'); p+=park(18.5,1,5,38,'v'); p+=park(1,26,5,13,'v'); p+=park(8.5,26,5,13,'v'); return [b,p]; }},
-    D:{t:'2区画に分けて貸す（組み合わせ案）',st:4,txt:'北側 約190坪をクリニック、南側 約100坪をコインランドリーまたは調剤薬局に。<b>1社で使い切れない広さを2社に分けて貸す案</b>です'+E+'。分け方は一例です。',
-       draw:function(){ var b=0,p=0; el('line',{x1:X(0),y1:Y(26.5),x2:X(24),y2:Y(26.5),stroke:'#b3402e','stroke-width':2,'stroke-dasharray':'6 4'});
-         el('text',{x:X(0.5),y:Y(26.5)-4,'font-size':10.5,fill:'#b3402e','font-weight':700},'区画① 約190坪 ／ 区画② 約100坪');
-         b+=bld(1,1,13,12,'クリニック',NAVY,'約156㎡'); p+=park(18.5,1,5,25,'v'); p+=park(1,15,5,10,'v');
-         b+=bld(1,29,8,7,'ランドリー',GOLD,'約56㎡'); p+=park(9.5,34,14.5,5,'h'); return [b,p]; }}
-  };
-  function setLay(k){
-    while(sv.firstChild) sv.removeChild(sv.firstChild);
-    /* road + site */
-    el('rect',{x:X(25),y:10,width:60,height:450,fill:'#e3e6ee'});
-    el('text',{x:X(25)+30,y:240,'text-anchor':'middle','font-size':12,fill:'#4a5266','font-weight':700,transform:'rotate(90 '+(X(25)+30)+' 240)'},'前面道路（帯状地・幅約12〜13m 要確認）');
-    el('rect',{x:X(0),y:Y(0),width:24*SC,height:40*SC,fill:'#fff',stroke:'#c19534','stroke-width':3});
-    var r=LAY[k].draw();
-    el('text',{x:X(12),y:Y(40)+18,'text-anchor':'middle','font-size':11,fill:'#4a5266'},'東西 約24m');
-    el('text',{x:X(0)-8,y:Y(20),'text-anchor':'middle','font-size':11,fill:'#4a5266',transform:'rotate(-90 '+(X(0)-8)+' '+Y(20)+')'},'南北 約40m');
-    el('path',{d:'M 20 12 L 26 30 L 20 26 L 14 30 Z',fill:'#16233f'}); el('text',{x:20,y:44,'text-anchor':'middle','font-size':11,'font-weight':700,fill:'#16233f'},'N');
-    var L=LAY[k];
-    document.getElementById('planInfo').innerHTML='<h4>'+L.t+' <span style="color:var(--gold)">'+'★★★★★'.slice(0,L.st)+'</span></h4>'+
-      '<div class="pnum"><div><small>敷地</small><b>940</b>㎡</div><div><small>建物（1階）</small><b>'+Math.round(r[0])+'</b>㎡</div><div><small>駐車</small><b>'+r[1]+'</b>台</div></div><p>'+L.txt+'</p>'+
-      '<p style="margin-top:6px;font-size:11.8px;color:var(--muted)">建ぺい率60%（推定）の上限は564㎡。図の建物はその範囲内です。</p>';
-    document.querySelectorAll('#layBtns button').forEach(function(x){x.classList.toggle('on',x.dataset.l===k);});
-  }
-  document.querySelectorAll('#layBtns button').forEach(function(b){ b.addEventListener('click',function(){ setLay(b.dataset.l); }); });
-  setLay('A');
 
   /* ---------- tabs ---------- */
   document.querySelectorAll('#fTabs button').forEach(function(b){
