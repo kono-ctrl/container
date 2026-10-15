@@ -524,6 +524,23 @@
       </div>
     </div>
 
+    <h3 class="sub">貸し出した場合の収益 ― 1年・5年・10年（貸出価格ベース）</h3>
+    <div class="calc" id="income">
+      <div class="grid-2" style="gap:14px">
+        <div><label>固定資産税・都市計画税（年額・控除） <output id="o_tax">30万円</output></label>
+        <input type="range" id="r_tax" min="0" max="80" step="1" value="30"></div>
+        <div><label>管理費・諸経費（賃料に対する割合・控除） <output id="o_mgmt">5%</output></label>
+        <input type="range" id="r_mgmt" min="0" max="15" step="0.5" value="5"></div>
+      </div>
+      <div class="tbl-wrap" style="margin-top:10px">
+        <table class="ft cmp" style="min-width:640px">
+          <tr><th>ケース（貸出価格）</th><th style="text-align:right">月額</th><th style="text-align:right">1年</th><th style="text-align:right">5年</th><th style="text-align:right">10年</th></tr>
+          <tbody id="incBody"></tbody>
+        </table>
+      </div>
+      <div class="note">上段＝賃料の累計（貸出価格×期間）、下段＝<b>手取りの目安</b>（賃料 − 固都税 − 管理費・諸経費）。基準ケースは上のシミュレーターの「貸出価格｜坪単価／月」と連動します。<b>前提</b>：賃料は期間中一定・空室なし・敷金や保証金の運用益は含めない。固都税の初期値30万円は、売出価格の目安（約3,810万円）から、評価額＝相場の7割、課税標準＝評価額の7割（非住宅用地の上限）、税率1.7%（固定資産税1.4%＋都市計画税0.3%）と置いて逆算した仮の値（約32万円）です <span class="cf cf-est">推定</span>（評価証明書で要確認）。管理費5%も一般的な目安で、所得税・住民税、転用・造成費、仲介手数料は差し引いていません。<b>賃料はすべて貸出価格（募集）で、成約賃料ではありません</b>。</div>
+    </div>
+
     <h3 class="sub">貸出価格（月額）の参考 ― 目線と貸出中の事例（成約価格は不明）</h3>
     <div class="tbl-wrap">
       <table class="cases" style="min-width:760px">
@@ -961,6 +978,23 @@
   document.querySelectorAll('#calc .presets button').forEach(function(b){ b.addEventListener('click',function(){
     if(b.hasAttribute('data-r')) rr.value=b.getAttribute('data-r'); else rt.value=b.getAttribute('data-t'); calc(); }); });
   calc();
+  /* ---------- income 1/5/10 years ---------- */
+  var rtax=document.getElementById('r_tax'), rmg=document.getElementById('r_mgmt');
+  function m1(v){ return (v/10000).toLocaleString('ja-JP',{maximumFractionDigits:0})+'万円'; }
+  function income(){
+    var tax=+rtax.value*10000, mg=+rmg.value/100;
+    document.getElementById('o_tax').textContent=rtax.value+'万円';
+    document.getElementById('o_mgmt').textContent=rmg.value+'%';
+    var cases=[['下限（近隣の貸出価格 坪500円）',500,''],['基準（坪'+(+rr.value).toLocaleString('ja-JP')+'円／月）',+rr.value,' class="hl"'],['上限（近隣の貸出価格 坪1,200円）',1200,'']];
+    document.getElementById('incBody').innerHTML=cases.map(function(c){
+      var mon=c[1]*TSUBO, yr=mon*12, net=yr-tax-yr*mg;
+      var cell=function(n){ return '<td class="r">'+m1(yr*n)+'<br><span style="color:var(--green)">手取り '+m1(net*n)+'</span></td>'; };
+      return '<tr'+c[2]+'><td>'+c[0]+'</td><td class="r">'+(mon/10000).toFixed(1)+'万円</td>'+cell(1)+cell(5)+cell(10)+'</tr>';
+    }).join('');
+  }
+  [rtax,rmg,rr].forEach(function(el){ el.addEventListener('input',income); });
+  document.querySelectorAll('#calc .presets button').forEach(function(b){ b.addEventListener('click',income); });
+  income();
 
   /* ---------- cases table ---------- */
   var CASES=[
